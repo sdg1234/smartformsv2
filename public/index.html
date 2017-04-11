@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Starter</title>
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Web Starter Kit">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#1e88e5">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#1e88e5">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <!-- Material Design icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+
+
+    <!-- Material Design Lite page styles:
+    You can choose other color schemes from the CDN, more info here http://www.getmdl.io/customize/index.html
+    Format: material.color1-color2.min.css, some examples:
+    material.red-teal.min.css
+    material.blue-orange.min.css
+    material.purple-indigo.min.css
+    -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+
+    <!-- Your styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/material.min.css">
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="deps/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bot.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="sweetalert2/sweetalert2.min.css">
+</head>
+
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary header-primary">
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+
+            </div>
+            <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+                <h3>Insurance Company</h3>
+            </div>
+            <div class="mdl-layout--small-screen-only mdl-layout__header-row">
+                <h3>Insurance Company</h3>
+            </div>
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark tabbar-primary">
+                <a href="#overview" class="mdl-layout__tab is-active">Home</a>
+                <a href="#form" class="mdl-layout__tab">Form Submission</a>
+                <a href="#serviceRequests" class="mdl-layout__tab">Service Requests</a>
+                <!--<button onclick="toggleBot()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
+                    <i class="material-icons" role="presentation">adb</i>
+                    <span class="visuallyhidden">Add</span>
+                </button>-->
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="mdl-layout__tab-panel is-active" id="overview">
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+                        <i class="material-icons">play_circle_filled</i>
+                    </header>
+                    <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                        <div class="mdl-card__supporting-text">
+                            <h4>Products</h4>
+                            In order to ensure that the insurance products offered by the insurers are of value to the policyholder and that their pricing is appropriate and fair between the insurer and the insured.
+                        </div>
+                        <div class="mdl-card__actions">
+                            <a href="#" onclick="seeProducts()" class="mdl-button">Select a product</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <div class="mdl-card mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                            <h4 class="mdl-cell mdl-cell--12-col">Details</h4>
+                            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                                <div class="section__circle-container__circle blue-back iconcolor-primary">
+                                    <i class="fa fa-hospital-o fa-2x" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                                <h4>Health Insurance:</h4>
+                                <a href="#">Health insurance </a> is insurance against the risk of incurring medical expenses among individuals. By estimating the overall risk of health care and health system expenses, among a targeted group, an insurer can develop a routine finance structure
+                            </div>
+                            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                                <div class="section__circle-container__circle blue-back iconcolor-primary">
+                                    <i class="fa fa-car fa-2x" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                                <h4>Car Insurance:</h4>
+                                <a href="#">Vehicle insurance</a> (also known as car insurance, motor insurance or auto insurance) is insurance for cars, trucks, motorcycles, and other road vehicles. Its primary use is to provide financial protection against physical damage and/or bodily injury resulting from traffic collisions.
+                            </div>
+                            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                                <div class="section__circle-container__circle blue-back iconcolor-primary">
+                                    <i class="fa fa-umbrella fa-2x" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                                <h4>Term life Insurance:</h4>
+                                <a href="#">Term life insurance</a> or term assurance is life insurance that provides coverage at a fixed rate of payments for a limited period of time, the relevant term.
+                            </div>
+                        </div>
+                        <div class="mdl-card__actions">
+                            <a href="#" class="mdl-button">Read our features</a>
+                        </div>
+                    </div>
+                    <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
+                        <li class="mdl-menu__item">Lorem</li>
+                        <li class="mdl-menu__item" disabled>Ipsum</li>
+                        <li class="mdl-menu__item">Dolor</li>
+                    </ul>
+                </section>
+                <div class="bot">
+                    <div class="bot-header" onclick="toggleBot()">
+                        <span>ChatBot</span>
+                    </div>
+
+                    <div class="text-input input-container">
+                        <!--<ul id="messages">
+                            
+                        </ul>-->
+                        <div class="form">
+                            <!--<input id="m" required autocomplete="off" type="text" placeholder="your message here.." />-->
+                            <!--<button onclick="speak()" class="speech-button">Speak</button>-->
+                            <button>
+                            <i class="fa fa-chevron-right" onclick="userSpeaks('text')" id="send-text"></i>
+                            <i class="fa fa-microphone" onclick="speakQuote(this)" id="send-voice"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-layout__tab-panel" id="serviceRequests">
+                <section class="section--center mdl-grid mdl-grid--no-spacing">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <h4 class="serviceheading">Service Requests</h4>
+                        <ul class="collapsible popout" data-collapsible="accordion">
+                            <li>
+                                <div class="collapsible-header"><span class="fonttext"> How do I file a claim?</span></div>
+                                <div class="collapsible-body"><span class="fonttext">Please Invoke our Voice Bot to further assist you. </span><a class="waves-effect waves-light btn voice" id="modal1">VoiceBot</a>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><span class="fonttext">How can I check the status of a claim ?</span></div>
+                                <div class="collapsible-body"><span class="fonttext">Please Invoke our Voice Bot to further assist you </span>
+                                    <a class="waves-effect waves-light btn voice" id="modal2">VoiceBot</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><span class="fonttext">How do I Know my personal information (i.e., address, phone number, email)?</span></div>
+                                <div class="collapsible-body"><span class="fonttext">Please Invoke our Voice Bot to further assist you. </span><a class="waves-effect waves-light btn voice" id="modal3">VoiceBot</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="collapsible-header"><span class="fonttext">How do I request a policy search?</span></div>
+                                <div class="collapsible-body"><span class="fonttext">Please Invoke our Voice Bot to further assist you. </span><a class="waves-effect waves-light btn voice" id="modal4">VoiceBot</a>
+                                </div>
+                            </li>
+                             <li>
+                                 <div class="collapsible-header"><span class="fonttext">How can I change my address?</span></div>
+                                <div class="collapsible-body"><span class="fonttext">Please Invoke our Voice Bot to further assist you. </span><a class="waves-effect waves-light btn voice" id="modal5">VoiceBot</a>
+                                </div>
+                            </li>
+                             <li>
+                                 <div class="collapsible-header"><span class="fonttext">How do I get information about my policy values?</span></div>
+                                <div class="collapsible-body"><span class="fonttext">Please Invoke our Voice Bot to further assist you. </span><a class="waves-effect waves-light btn voice" id="modal6">VoiceBot</a>
+                                </div>
+                            </li>
+                             <li>
+                                 <div class="collapsible-header"><span class="fonttext">How do I change my Beneficiary?</span></div>
+                                <div class="collapsible-body"><span class="fonttext">Please Invoke our Voice Bot to further assist you. </span><a class="waves-effect waves-light btn voice" id="modal7">VoiceBot</a>
+                                </div>
+                            </li>
+                             <li>
+                                 <div class="collapsible-header"><span class="fonttext">How can I contact a Customer Service Representative about my insurance policy?</span></div>
+                                <div class="collapsible-body"><span class="fonttext">Please Invoke our Voice Bot to further assist you. </span><a class="waves-effect waves-light btn voice" id="modal8">VoiceBot</a>
+                                </div>
+                            </li>
+                            <li>
+                                 <div class="collapsible-header"><span class="fonttext">Where can I find an agent after moving to another state?</span></div>
+                                <div class="collapsible-body"><span class="fonttext">Please Invoke our Voice Bot to further assist you. </span><a class="waves-effect waves-light btn voice" id="modal9">VoiceBot</a>
+                                </div>
+                            </li>
+                            <li>
+                                 <div class="collapsible-header"><span class="fonttext">How do I get information about my policy values?</span></div>
+                                <div class="collapsible-body"><span class="fonttext">Please Invoke our Voice Bot to further assist you. </span><a class="waves-effect waves-light btn voice" id="modal10">VoiceBot</a>
+                                </div>
+                            </li>
+                            <li>
+                                 <div class="collapsible-header"><span class="fonttext">How can I reinstate a lapsed policy?</span></div>
+                                <div class="collapsible-body"><span class="fonttext">Please Invoke our Voice Bot to further assist you. </span><a class="waves-effect waves-light btn voice" id="modal11">VoiceBot</a>
+                                </div>
+                            </li>
+                            <li>
+                                 <div class="collapsible-header"><span class="fonttext">Can I make an online payment to my life insurance policy?</span></div>
+                                <div class="collapsible-body"><span class="fonttext">Please Invoke our Voice Bot to further assist you. </span>
+                                <a class="waves-effect waves-light btn voice" id="modal12">VoiceBot</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="row hidden mdl-shadow--8dp" id="voicebot">
+                        <div class="card fill-parent">
+                            <div class="card-image fill-parent">
+                                <div id="dynamic-text"></div>
+                                <div id="dynamic-result"></div>
+                                <i class="fa fa-times fa-2x closing-btn" id="closing"></i>
+                                <img class="image" id="audio-image" src="images/animated-sound-waves.gif">
+                                <a class="btn-floating halfway-fab waves-effect waves-light red " id="mike" onclick="speaks(this)"><i class="material-icons">mic_none</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <div class="mdl-layout__tab-panel" id="form">
+                <section>
+
+                       <div class="messageread">
+                     <button onclick="speaking(this)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--8dp mdl-color--accent iconics" id="add">
+                    <i class="material-icons" role="presentation">adb</i>
+                    <span class="visuallyhidden">Add</span>
+                </button>
+                    <div class ="message">
+                            <div class="bubble bubble-top" id="jane-questions">
+                                
+                                <span id="bubble-text" class="bubble-text">Hello there...</span>
+                                
+                            </div>
+                            </div>
+                        </div>
+
+                    <div class="col s12 m7" id="personal-details">
+
+                        <div class="card horizontal card-sizing">
+
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <div class="row">
+                                        <form class="col s12">
+                                            <div>
+                                                <h4 class="header detail-header">Personal Details</h4>
+                                            </div>
+                                            <div class="form-fields">
+                                                <div class="input-field" id="personal-first-name-container">
+                                                    <i class="material-icons prefix">account_circle</i>
+                                                    <input id="personal-first-name" type="text" class="validate">
+                                                    <label for="icon_prefix">First Name</label>
+                                                </div>
+                                                <div class="input-field" id="personal-last-name-container">
+                                                    <i class="material-icons prefix">account_circle</i>
+                                                    <input id="personal-last-name" type="text" class="validate">
+                                                    <label for="icon_telephone">Last Name</label>
+                                                </div>
+                                                <div class="input-field" id="personal-age-container">
+                                                    <i class="material-icons prefix">perm_identity</i>
+                                                    <input id="personal-age" type="text" class="validate">
+                                                    <label for="icon_prefix">Age</label>
+                                                </div>
+
+                                                <div class="input-field" id="personal-address-container">
+                                                    <i class="material-icons prefix">my_location</i>
+                                                    <input id="personal-address" type="text" class="validate">
+                                                    <label for="icon_telephone">Address</label>
+                                                </div>
+                                                <div class="input-field" id="personal-education-container">
+                                                    <i class="material-icons prefix">work</i>
+                                                    <input id="personal-education" type="text" class="validate">
+                                                    <label for="icon_prefix">Educational Qualification</label>
+                                                </div>
+                                                <div class="input-field" id="personal-marital-status-container">
+                                                    <i class="material-icons prefix">supervisor_account</i>
+                                                    <input id="personal-marital-status" type="text" class="validate" onchange="maritalStatus()">
+                                                    <label for="icon_telephone">Marital Status</label>
+                                                </div>
+
+                                                <div class="input-field income-allign" id="personal-income-container">
+                                                    <i class="material-icons prefix">business</i>
+                                                    <input id="personal-income" type="text" class="validate">
+                                                    <label for="icon_telephone">Income</label>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col s12 m7 hidden-translate" id="other-details">
+
+                        <div class="card horizontal card-sizing">
+
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <div class="row">
+                                        <form class="col s12">
+                                            <div>
+                                                <h4 class="header detail-header">Spouse Details</h4>
+                                            </div>
+                                            <div class="form-fields">
+                                                <div class="input-field" id="spouse-name-container">
+                                                    <i class="material-icons prefix">account_circle</i>
+                                                    <input id="spouse-name" type="text" class="validate">
+                                                    <label for="icon_prefix">Spouse Name</label>
+                                                </div>
+                                                <div class="input-field" id="spouse-age-container">
+                                                    <i class="material-icons prefix">perm_identity</i>
+                                                    <input id="spouse-age" type="text" class="validate">
+                                                    <label for="icon_telephone">Spouse Age</label>
+                                                </div>
+                                                <div class="input-field" id="spouse-income-container">
+                                                    <i class="material-icons prefix">business</i>
+                                                    <input id="spouse-income" type="text" class="validate">
+                                                    <label for="icon_prefix">Spouse Income</label>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m7 hidden-translate" id="other-details-family">
+
+                        <div class="card horizontal card-sizing">
+
+                            <div class="card-stacked">
+                                <div class="card-content">
+                                    <div class="row">
+                                        <form class="col s12">
+                                            <div>
+                                                <h4 class="header detail-header">Family Details</h4>
+                                            </div>
+                                            <div class="form-fields">
+                                                <div class="input-field" id="father-name-container">
+                                                    <i class="material-icons prefix">account_circle</i>
+                                                    <input id="father-name" type="text" class="validate">
+                                                    <label for="icon_prefix">Father Name</label>
+                                                </div>
+                                                <div class="input-field" id="father-age-container">
+                                                    <i class="material-icons prefix">perm_identity</i>
+                                                    <input id="father-age" type="text" class="validate">
+                                                    <label for="icon_telephone">Father Age</label>
+                                                </div>
+                                                <div class="input-field" id="mother-name-container">
+                                                    <i class="material-icons prefix">account_circle</i>
+                                                    <input id="mother-age" type="text" class="validate">
+                                                    <label for="icon_prefix">Mother Name</label>
+                                                </div>
+
+                                                <div class="input-field" id="mother-age-container">
+                                                    <i class="material-icons prefix">perm_identity</i>
+                                                    <input id="mother-age" type="text" class="validate">
+                                                    <label for="icon_telephone">Mother Age</label>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <footer class="mdl-mega-footer">
+                <div class="mdl-mega-footer--middle-section">
+                    <div class="mdl-mega-footer--drop-down-section">
+                        <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer--heading">Features</h1>
+                        <ul class="mdl-mega-footer--link-list">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Partners</a></li>
+                            <li><a href="#">Updates</a></li>
+                        </ul>
+                    </div>
+                    <div class="mdl-mega-footer--drop-down-section">
+                        <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer--heading">Details</h1>
+                        <ul class="mdl-mega-footer--link-list">
+                            <li><a href="#">Spec</a></li>
+                            <li><a href="#">Tools</a></li>
+                            <li><a href="#">Resources</a></li>
+                        </ul>
+                    </div>
+                    <div class="mdl-mega-footer--drop-down-section">
+                        <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer--heading">Service centers</h1>
+                        <ul class="mdl-mega-footer--link-list">
+                            <li><a href="#">How it works</a></li>
+                            <li><a href="#">Centers</a></li>
+                            <li><a href="#">Usage</a></li>
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Contracts</a></li>
+                        </ul>
+                    </div>
+                    <div class="mdl-mega-footer--drop-down-section">
+                        <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+                        <h1 class="mdl-mega-footer--heading">FAQ</h1>
+                        <ul class="mdl-mega-footer--link-list">
+                            <li><a href="#">Questions</a></li>
+                            <li><a href="#">Answers</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mdl-mega-footer--bottom-section">
+                    <div class="mdl-logo">
+                        More Information
+                    </div>
+                    <ul class="mdl-mega-footer--link-list">
+
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Privacy and Terms</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+    </div>
+    
+
+    
+
+    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <!-- build:js scripts/main.min.js -->
+    <script src="scripts/main.js"></script>
+    <script src="deps/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script src="../socket.io/socket.io.js"></script>
+    <script src="js/chatFunctions.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/bot.js"></script>
+
+<script src="sweetalert2/sweetalert2.min.js"></script>
+    <!-- endbuild -->
+
+
+    <!-- Built with love using Web Starter Kit -->
+</body>
+
+</html>

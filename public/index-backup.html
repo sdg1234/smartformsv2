@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Robotics based Advice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="deps/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="bot">
+        <div class="bot-header">
+          <span onclick="toggleBot()">ChatBot</span>
+          <div class="bot-action">
+            <i class="fa fa-microphone" onclick="toggleVoice(this)"></i>
+            <i class="fa fa-arrows-v" onclick="toggleBot()"></i>
+          </div>          
+        </div>
+
+        <div class="voice-input input-container">
+            <!--<div class="close-voice">
+                <i class="fa fa-times fa-2x" onclick="toggleVoice(this)"></i>
+            </div>
+            <div class="open-voice">
+                <i class="fa fa-microphone fa-2x" onclick="toggleVoice(this)"></i>
+            </div>-->
+            <div class="listen" onclick="speak(this)">
+                <i class="fa fa-microphone fa-3x"></i>
+                <div class="radiate"></div>
+                <div class="radiate2"></div>
+            </div>
+
+        </div>
+        <div class="text-input input-container">
+            <ul id="messages">
+
+            </ul>
+            <div class="form">
+                <input id="m" autocomplete="off" type="text" />
+                <!--<button onclick="speak()" class="speech-button">Speak</button>-->
+                <button onclick="form('text')">
+            <i class="fa fa-chevron-right"></i>
+          </button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="deps/jquery-3.1.1.min.js"></script>
+<script src="../socket.io/socket.io.js"></script>
+<script src="js/scripts.js"></script>
+
+</html>
