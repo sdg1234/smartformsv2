@@ -1,0 +1,7 @@
+{
+  "name": "smart-formsv2",
+  "description": "smart-formsv2",
+  "repository": "https://github.com/sdg1234/smartformsv2",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs"
+}
