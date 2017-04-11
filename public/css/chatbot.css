@@ -1,0 +1,652 @@
+#chatbot-trigger {
+    height: 60px;
+    width: 60px;
+    background: teal;
+    border-radius: 60px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1001;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #fff;
+}
+
+#chatbot-main {
+    height: 80%;
+    width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 90px;
+    right: 20px;
+    z-index: 1001;
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+
+    -webkit-perspective: 700px;
+
+            perspective: 700px;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    box-shadow: 0 5px 6px -3px rgba(0,0,0,.2), 0 9px 12px 1px rgba(0,0,0,.14), 0 3px 16px 2px rgba(0,0,0,.12);
+}
+
+
+
+.hidden-icon {
+    display: none;
+}
+
+#chatbot-main .chatbot-header {
+    height: 15%;
+    width: 100%;
+    background: teal;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-left: 20px;
+    color: #fff;
+}
+
+#chatbot-main .chatbot-body {
+    height: 75%;
+    width: 100%;
+    /*background: #fff;*/
+    color: teal;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s;
+}
+
+#chatbot-payment-main {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    color: #9a9a9a;
+    position: relative;
+    perspective: 700px;
+    /*background: #eee;*/
+}
+
+.payment-method-container {
+    z-index: 12;
+    left: 0;
+    top: 50px;
+    background: #fff;
+    width: 100%;
+    margin-top: 50px;
+    position: absolute;
+    transform-style: preserve-3d;
+}
+
+.payment-method-main {
+    z-index: 11;
+    left: 0;
+    top: 50px;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-top: 0px;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.payment-method-main-button {
+    position: absolute;
+    bottom: -60px;
+    left: 100px;
+    height: 50px;
+    width: 100px;
+    line-height: 50px;
+    background: teal;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.payment-method-main-header, .payment-method-main-footer {
+    height: 75px;
+    line-height: 75px;
+    display: flex;
+    flex-direction: row;
+}
+
+.payment-method-main-header {
+    font-size: 150%;
+    width: 90%;
+    margin-left: 5%;
+    /*margin-left: 30px;*/
+    justify-content: space-around;
+}
+
+.payment-method-main-footer {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.payment-method-main-body {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-method-main-body input {
+    width: 80%;
+    font-size: 185%;
+    text-align: center;
+}
+
+.payment-method-main-header {
+    color: #fff;
+}
+
+
+.payment-method-main-header i {
+    line-height: 75px;
+}
+
+.payment-method-box {
+    
+    width: 170px;
+    border-radius: 50%;
+    height: 170px;    
+    float: left;
+    margin: 17px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+}
+
+.visa-mastercard-box {
+    background-image: url('../images/cards.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.paypal-box {
+    background-image: url('../images/paypal.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.cheque-box {
+    background-image: url('../images/cheque.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.wallets-box {
+    background-image: url('../images/wallet.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.payment-method-mask {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    line-height: 170px;
+    width: 170px;
+    border-radius: 50%;
+    height: 170px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.6s ease-in-out;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.payment-method-box:hover .payment-method-mask{
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#chatbot-payment-main h4 {
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    color: #333;
+}
+
+.chat-payment-active {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    /*z-index: 9999999999;*/
+}
+
+#messages {
+    display: block;
+    background: #fff;
+}
+
+#messages, #chatbot-payment-main {    
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;    
+     -webkit-backface-visibility: hidden;    
+             backface-visibility: hidden;
+}
+
+#chatbot-main .chatbot-footer {
+    height: 10%;
+    width: 100%;
+    background: #eee;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 20px;
+    color: teal;    
+}
+
+.chatbot-input-message {
+    width: 80% !important;
+    height: 25.6px !important;
+    height: 1.6rem !important;
+    margin-bottom: 0 !important;
+}
+
+.chatbot-send-message i {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+}
+
+.chatbot-input-message:focus + .chatbot-send-message i {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+
+.chatbot-send-message:hover i {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+
+.chatbot-send-message {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background: transparent;
+    color: teal;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+}
+
+.chatbot-send-message i {
+    /*font-size: 125%;*/
+}
+
+.chat-active {
+    -webkit-transform: scaleY(1) !important;
+            transform: scaleY(1) !important;
+    opacity: 1 !important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+
+.chatbot-user-message, .chatbot-bot-message {
+    width: 100%;
+    min-height: 70px;
+    height: auto;
+}
+
+.chatbot-user-message .cht-user-message, .chatbot-bot-message .cht-bot-message {
+    min-width: 75px;
+    width: auto;
+    min-height: 30px;
+    height: auto;
+    border-radius: 30px;
+    text-align: center;
+    margin: auto 0;
+}
+
+
+.chatbot-user-message .cht-user-message{
+    color: teal;
+    float: left;
+    background-color: #eee;
+}
+
+.chatbot-bot-message .cht-bot-message {
+    color: #fff;
+    float: right;
+    background-color: teal;
+}
+
+@media only screen and (max-width: 500px) {
+    #chatbot-main {
+        height: 100vh;
+        width: 100vw;
+        bottom: 0;
+        right: 0;
+    }
+}
+.main {
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
+    /*overflow: auto;*/
+    position: relative;
+    padding-bottom: 10%;
+    text-transform: capitalize;
+}
+
+.heading h2, .heading h5 {
+  margin: 10px !important;
+}
+
+.heading {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.headings {
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.headingsss {
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+    text-align: center;
+}
+.headings1 {
+    font-weight: bold;
+}
+.headings2 {
+    color: grey;
+}
+.content {
+    width: 90%;
+    height: 30%;
+    margin: 10px auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+}
+.content1 {
+    width: 100px;
+    height: 100px;
+    margin: 5px auto;
+    border-radius: 98%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: white;
+    background: teal;
+}
+.content2 {
+    width: 95%;
+    height: 39%;
+    margin: 5px auto;
+}
+.rate {
+    font-size: 200%;
+}
+.data1 {
+    width: 100%;
+    height: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.data2 {
+    width: 100%;
+    height: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.dashed {
+    width: 100%;
+    height: 0%;
+    border-style: dashed;
+    border-width: thin;
+    border-color: grey;
+}
+.coverage-details {
+    width: 100%;
+    height: 45%;
+    margin: 0 auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.bubble-payment {
+    float: left;
+    width: 90px;
+    height: 100px;
+    margin: 16px;
+}
+.bubble-data {
+    text-align: center;
+    margin: 0 auto;
+    margin-left: 35%;
+}
+.bubble-section {
+    height: 70px;
+    width: 70px;
+    border-radius: 70px;
+    margin: 7px auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: #9a9a9a;
+}
+.contentss {
+    width: 90%;
+    height: 20%;
+    margin: 5px auto;
+}
+.paynow {
+    width: 100%;
+    height: 6%;
+    background: teal;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    z-index: 2;
+    color: #fff;    
+    display: -webkit-box;    
+    display: -ms-flexbox;    
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+}
+.paydata {
+}
+.dollar {
+  
+}
+
+#payment-method-container {
+    opacity: 1;
+}
+
+.hide-payment-container {
+    z-index: 10 !important;
+    opacity: 0 !important;
+    transform: translateY(-50%) rotateX(80deg);
+    transition: transform 700ms ease, opacity 700ms ease, z-index 1s ease;
+}
+
+.expiry, .cvv {
+    text-align: center;
+}
+
+.expiry {
+    width: 20% !important;
+}
+
+.cvv {
+    width: 15% !important;
+}
+
+.utility-payment-option {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  background: green;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+}
+
+.utility-payment-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.utility-payment-btn {
+    background: green;
+    color: #fff;
+    border: 1px solid #fff;
+    margin: 5px;
+    height: 50px;
+    font-weight: 300;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 42px !important;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.utility-payment-btn:hover {
+    color: green;
+    background: #fff;
+    border: 0px solid #fff;
+}

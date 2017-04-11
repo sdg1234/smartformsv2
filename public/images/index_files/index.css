@@ -1,0 +1,143 @@
+html, body {
+    box-sizing:border-box;
+  height: 100%;
+    
+}
+.main{
+  width:100%;
+ 
+  height:100%;
+}
+.heading{
+  width:50%;
+  margin: 0 auto;
+ text-align:center;
+ justify-content: center;
+ 
+    display:flex;
+    flex-direction: column;
+}
+.headings{
+  width: 23%;
+    height: 3%;
+  margin: 10px auto;
+ text-align:center;
+ justify-content: center;
+  
+}
+.headingsss{
+  width:28%;
+    height:3%;
+  margin: 10px auto;
+ text-align:center;
+ justify-content: center;
+ 
+}
+.headings1{
+    font-weight:bold;
+}
+.headings2{
+    color:grey;
+}
+.content{
+     width: 50%;
+    height: 14%;
+    margin: 5px auto;
+}
+.content1{
+  width: 30%;
+    height: 56%;
+    
+    margin: 5px auto;
+    border-radius: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: red;
+  
+}
+.content2{
+  width: 95%;
+    height: 39%;
+  margin:5px auto;
+}
+.rate{
+ font-size: 200%;
+}
+.data1{
+  width:100%;
+  height:40%;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  
+}
+.data2{
+  width:100%;
+  height:40%;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  
+}
+.dashed{
+  width:100%;
+  height:0%;
+  border-style: dashed;
+    border-width: thin;
+    border-color: grey;
+}
+.coverage-details{
+    width:38%;
+    margin: 0 auto;
+    justify-content: center;
+    height: 12%;
+    
+}
+.bubble{
+    float: left;
+    width:90px;
+    height:100px;
+    
+}
+.bubble-data{
+    text-align:center;
+    margin:0 auto;
+    margin-left: 35%;
+}
+.bubble-section {
+    height: 70px;
+    width: 70px;
+    border-radius: 70px;
+    margin: 7px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background: #9a9a9a;
+}
+.contentss{
+     width:50%;
+  height:5%;
+  margin:5px auto;
+   
+}
+.paynow{
+    width:100%;
+    height:4%;
+    background:red;
+    position:fixed;
+    z-index:2;
+    bottom:0;
+}
+.paydata{
+    text-align: center;
+    margin: 2% auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+

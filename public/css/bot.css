@@ -1,0 +1,148 @@
+.bot-item {
+    /*background-color: #fff;*/
+}
+.user-item {
+    /*background-color: #bbd3dc;*/
+}
+.bot {
+    display: none;
+}
+.user-item,
+.bot-item {
+    margin: 3px 0;
+}
+.bot-message,
+.user-message {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+}
+.collapsible-body {
+    padding: 16px;
+    padding: 1rem;
+}
+.bot-image {
+    margin: 5px 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    background-image: url('../images/bot.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.user-image {
+    margin: 5px 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    background-image: url('../images/user-img.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bot-data,
+.user-data {
+    border-radius: 30px;
+    margin: auto 0;    
+    padding: 5px 20px !important;
+    padding: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.user-message {
+    display: flex;
+    justify-content: flex-end;
+}
+.bot-data {
+    background: teal;
+    color: #fff;
+    max-width: 70%;
+}
+.user-data {
+    background: #eee;
+    color: teal;
+}
+.bot-heading,
+.user-heading {
+    font-weight: bold;
+}
+.bot-message-content,
+.user-message-content {} .carousel-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.inline-card {
+    margin: 5px;
+}
+.bubble-text {
+    color: #fff;
+}
+.sum-assured-btn {
+    width: 100%;
+}
+.scroll {
+    width: auto;
+    height: 60%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+}
+.paragraph {
+    line-height: 0px;
+}
+.chip-life {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5px;
+}
+.chip {
+    width: 58% !important;
+    background-color: rgb(30, 136, 229) !important;
+    color: rgb(255, 255, 255) !important;
+}
+.text-color {
+    color: #1e88e5;
+}
+.alternate-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+}
+.mdl-layout__header {
+    z-index: 1;
+}
+.alternate-header .bot-heading {
+    width: 60%;
+    padding-top: 25px;
+}
