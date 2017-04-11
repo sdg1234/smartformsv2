@@ -1,0 +1,25 @@
+{
+  "name": "apipi",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "5.9.1"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1",
+    "http": "0.0.0",
+    "request": "^2.80.0",
+    "socket.io": "^1.7.3"
+  }
+}
